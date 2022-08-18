@@ -1,0 +1,70 @@
+<h1>Data Custody Agreement Form for CASE ID: {{caseID}}, DCA ID: {{uniquedcaID}}</h1>
+<a href="/artifacts/dcainfo/{{caseID}}" class="btn btn-primary pull-left">Back to DCA Info Page</a>
+<br/><br/>
+<h4>Checklist</h4><br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Activity</th>
+            <th>Completed Date (mm/dd/yyyy)</th>
+            <th>Comments</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Change Initiative Risk Assessment (CIRA) process</td>
+            <td>01/01/2021</td>
+            <td>CIRA ID: example</td>
+        </tr>
+        {{#each data}}
+			<tr>
+				<td>{{dca_activity}}</td>
+				<td>{{dca_activity_completed_date}}</td>
+                <td>{{dca_activity_comments}}</td>
+				<td><a
+						href='/artifacts/dcapg5/delete/{{caseID}}/{{dcachecklistId}}'
+						class='btn btn-danger pull-right'
+					>Delete</a></td>
+			</tr>
+		{{/each}}
+    </tbody>
+</table>                
+<form method="post" action="/artifacts/dcapg5">
+    <div class="row">
+        <div class="col-md-12">
+            <br/><br/>
+            <input type="hidden" id="caseID" name="caseID" value="{{caseID}}" readonly>
+            <input type="hidden" id="dcaID" name="dcaID" value="{{uniquedcaID}}" readonly>
+            <h4>Checklist</h4><br/>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Completed Date (mm/dd/yyyy)</th>
+                        <th>Comments</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select class="form-control" name="dca_activity" id="dca_activity">
+                                <option value="Change Initiative Risk Assessment (CIRA) process">Change Initiative Risk Assessment (CIRA) process</option>
+                                <option value="Deviations filed, list all non-compliance to standards">Deviations filed, list all non-compliance to standards</option>
+                                <option value="Technology Triage process">Technology Triage process</option>
+                            </select>
+                        </td>
+                        <td><input class="form-control" id="dca_activity_completed_date" name="dca_activity_completed_date" type="text"></td>
+                        <td><input class="form-control" id="dca_activity_comments" name="dca_activity_comments" type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <button type="submit" class="btn btn-success pull-right">Submit</button>
+    </div>
+</form>   
+
+<br/><br/>  
+<a href="/artifacts/dcapg4/{{caseID}}/{{uniquedcaID}}" class="btn btn-primary pull-left">Previous Page</a>
+<a href="/artifacts/dcapg6/{{caseID}}/{{uniquedcaID}}" class="btn btn-primary pull-right">Next Page</a>

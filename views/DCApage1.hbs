@@ -1,0 +1,95 @@
+<h1>Data Custody Agreement Form for CASE ID: {{caseID}}, DCA ID: {{uniquedcaID}}</h1>
+<a href="/artifacts/dcainfo/{{caseID}}" class="btn btn-primary pull-left">Back to DCA Info Page</a>
+<br/>
+<table class="table tb1">
+    <thead>
+        <tr>
+            <th>Project Name</th>
+            <th>MAP ID</th>
+            <th>DCJ App</th>
+            <th>SBU/FG</th>
+            <th>Data Owner Email Address</th>
+            <th>Data Custodian Email Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each dcaconsumer}}
+        <tr>
+            <td>{{dcaconsumer1}}</td>
+            <td>{{dcaconsumer7}}</td>
+            <td>{{dcaconsumer5}}</td>
+            <td>{{dcaconsumer2}}</td>
+            <td>{{dcaconsumer3}}</td>
+            <td>{{dcaconsumer4}}</td>
+            <td><a href="/artifacts/dcapg1/delete/{{caseID}}/{{dcaconsumerId}}" class="btn btn-danger">remove</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<br/><br/>
+<h4>Data Consumer(s)</h4><br/>
+
+<form method="post" action="/artifacts/dcapg1">
+<input type="hidden" id="caseID" name="caseID" value="{{caseID}}" readonly>
+<input type="hidden" id="dcaID" name="dcaID" value="{{uniquedcaID}}" readonly>
+    <div class="row">
+        <div class="col-md-3">
+            <label class="control-label" for="">Project Name</label><br/>
+            <input class="form-control" id="dcaconsumer1" name="dcaconsumer1" type="text"><br/>
+        </div>
+        <div class="col-md-3">
+            <label for="">Application Name</label><br/>
+            <input class="form-control" id="dcaconsumer6" name="dcaconsumer6" type="text"><br/>
+        </div>
+        <div class="col-md-3">
+            <label for="">Data Repository Name</label><br/>
+            <input class="form-control" id="dcaconsumer7" name="dcaconsumer7" type="text"><br/>
+        </div>
+        <div class="col-md-3">
+            <label for="">MAP ID</label><br/>
+            <input class="form-control" id="dcaconsumer8" name="dcaconsumer8" type="text"><br/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label for="dcaconsumer2">SBU/FG</label><br/>
+            <select class="form-control" name="dcaconsumer2" id="dcaconsumer2">
+                <option value="Capital Markets">Capital Markets</option>
+                <option value="Commercial Banking and Wealth Management, Canada">Commercial Banking and Wealth Management, Canada</option>
+                <option value="Personal and Business Banking, Canada">Personal and Business Banking, Canada</option>
+                <option value="US Region">US Region</option>
+                <option value="Administration">Administration</option>
+                <option value="Finance">Finance</option>
+                <option value="Internal Audit">Internal Audit</option>
+                <option value="People, Culture and Brand">People, Culture and Brand</option>
+                <option value="Risk Management">Risk Management</option>
+                <option value="Technology, Infrastructure and Innovation">Technology, Infrastructure and Innovation</option>
+            </select>
+            <br/>
+        </div>
+        <div class="col-md-6">
+            <label for="dcaconsumer5">Is this application a DCJ?</label><br/>
+            <select class="form-control" name="dcaconsumer5" id="dcaconsumer5">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <br/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label class="control-label" for="">Data Owner email address</label><br/>
+            <input class="form-control" id="dcaconsumer3" name="dcaconsumer3" type="text"><br/>
+        </div>
+        <div class="col-md-6">
+            <label class="control-label" for="">Data Custodian email address</label><br/>
+            <input class="form-control" id="dcaconsumer4" name="dcaconsumer4" type="text"><br/>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success pull-left">Create Entry</button>
+</form>
+<a href="/artifacts/dcapg2/{{caseID}}/{{uniquedcaID}}" class="btn btn-primary pull-right">Next Page</a>

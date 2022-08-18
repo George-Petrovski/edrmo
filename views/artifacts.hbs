@@ -1,0 +1,114 @@
+<h1>TRIAGE ID: {{ viewData.caseID }}</h1>
+<br/><br/><br/>
+<form method="post" action="/artifacts/update">
+<input type="hidden" id="caseID" name="caseID" value="{{viewData.caseID}}" readonly>
+    <div class="row">  
+        <div class="form-group">
+            <div class="col-md-6">
+                <label>Q1. Will data be leaving the bank as a result of this initiative?</label>
+            </div>
+            <div class="col-md-6">
+                <label class="checkbox-inline">Yes
+                    <input type="radio" id="q1" name="q1" value="1"
+                    {{#if (eq viewData.q1 1)}}
+                    checked
+                    {{/if}}>
+                </label>
+                <label class="checkbox-inline">No
+                    <input type="radio" id="q1" name="q1" value="0"
+                    {{#if (eq viewData.q1 0)}}
+                    checked
+                    {{/if}}>
+                </label>
+            </div>
+        </div>
+    </div><br/>
+    <div class="row">  
+        <div class="form-group">
+            <div class="col-md-6">
+                <label>Q2. Are there new data elements as a result of this initiative?</label>
+            </div>
+            <div class="col-md-6">
+                <label class="checkbox-inline">Yes
+                    <input type="radio" id="q2" name="q2" value="1"
+                    {{#if (eq viewData.q2 1)}}
+                    checked
+                    {{/if}}>
+                </label>
+                <label class="checkbox-inline">No
+                    <input type="radio" id="q2" name="q2" value="0"
+                    {{#if (eq viewData.q2 0)}}
+                    checked
+                    {{/if}}>
+                </label>
+            </div>
+        </div>
+    </div><br/>
+    <div class="row">  
+        <div class="form-group">
+            <div class="col-md-6">
+                <label>Q3. Will there be any changes to any sources of data?</label>
+            </div>
+            <div class="col-md-6">
+                <label class="checkbox-inline">Yes
+                    <input type="radio" id="q3" name="q3" value="1"
+                    {{#if (eq viewData.q3 1)}}
+                    checked
+                    {{/if}}>
+                </label>
+                <label class="checkbox-inline">No
+                    <input type="radio" id="q3" name="q3" value="0"
+                    {{#if (eq viewData.q3 0)}}
+                    checked
+                    {{/if}}>
+                </label>
+            </div>
+        </div>
+    </div><br/>
+    <div class="row">  
+        <div class="form-group">
+            <div class="col-md-6">
+                <label>Q4. Does this initiative involve human interaction with data?</label>
+            </div>
+            <div class="col-md-6">
+                <label class="checkbox-inline">Yes
+                    <input type="radio" id="q4" name="q4" value="1"
+                    {{#if (eq viewData.q4 1)}}
+                    checked
+                    {{/if}}>
+                </label>
+                <label class="checkbox-inline">No
+                    <input type="radio" id="q4" name="q4" value="0"
+                    {{#if (eq viewData.q4 0)}}
+                    checked
+                    {{/if}}>
+                </label>
+            </div>
+        </div>
+    </div><br/>
+    <div class="row">  
+        <div class="form-group">
+            <div class="col-md-6">
+                <label>Q5. Will there be any changes as per MAP?</label>
+            </div>
+            <div class="col-md-6">
+                <label class="checkbox-inline">Yes
+                    <input type="radio" id="q5" name="q5" value="1"
+                    {{#if (eq viewData.q5 1)}}
+                    checked
+                    {{/if}}>
+                </label>
+                <label class="checkbox-inline">No
+                    <input type="radio" id="q5" name="q5" value="0"
+                    {{#if (eq viewData.q5 0)}}
+                    checked
+                    {{/if}}>
+                </label>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <input type="submit" class="btn btn-danger" value="Next">   
+</form>

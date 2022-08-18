@@ -1,0 +1,88 @@
+<h1>Data Custody Agreement Form for CASE ID: {{caseID}}, DCA ID: {{uniquedcaID}}</h1>
+<a href="/artifacts/dcainfo/{{caseID}}" class="btn btn-primary pull-left">Back to DCA Info Page</a>
+<br/>
+<br />
+<h4>Data Usage and Intent</h4><br />
+<table class='table'>
+	<thead>
+		<tr>
+			<th>Group/Individual</th>
+			<th>Description of Usage</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>ADA</td>
+			<td>example description</td>
+			<td><button
+					type='delete'
+					class='btn btn-danger pull-right'
+				>Delete</button></td>
+		</tr>
+		<tr>
+			<td>John Smith</td>
+			<td>example description</td>
+			<td><button
+					type='delete'
+					class='btn btn-danger pull-right'
+				>Delete</button></td>
+		</tr>
+		{{#each dcauser}}
+			<tr>
+				<td>{{dcaintentuser}}</td>
+				<td>{{dcaintentdesc}}</td>
+				<td><a
+						href='/artifacts/dcapg4/delete/{{caseID}}/{{dcadataintentId}}'
+						class='btn btn-danger pull-right'
+					>Delete</a></td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+<form method='post' action='/artifacts/dcapg4'>
+	<div class='row'>
+		<div class='col-md-12'>
+			<br />
+			<table class='table'>
+				<thead>
+					<tr>
+						<th class="control-label">Group/Individual</th>
+						<th class="control-label">Description of Usage</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input
+								class='form-control'
+								id='dcaintentuser'
+								name='dcaintentuser'
+								type='text'
+							/></td>
+						<td><input
+								class='form-control'
+								id='dcaintentdesc'
+								name='dcaintentdesc'
+								type='text'
+							/></td>
+						<td><button
+								type='create'
+								class='btn btn-success pull-right'
+							>Add</button></td>
+					</tr>
+				</tbody>
+			</table>
+			<input
+				type='hidden'
+				id='caseID'
+				name='caseID'
+				value='{{caseID}}'
+				readonly
+			/>
+			<input type="hidden" id="dcaID" name="dcaID" value="{{uniquedcaID}}" readonly>
+			<br /><br />
+		</div>
+	</div>
+</form>
+<br /><br />
+<a href='/artifacts/dcapg3/{{caseID}}/{{uniquedcaID}}' class='btn btn-primary pull-left'>Previous Page</a>
+<a href='/artifacts/dcapg5/{{caseID}}/{{uniquedcaID}}' class='btn btn-primary pull-right'>Next Page</a>

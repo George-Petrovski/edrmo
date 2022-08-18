@@ -1,0 +1,12 @@
+.control-label:after {
+    content:"*";
+    color:red;
+  }
+
+.bg-pending {
+    background-color: orangered;
+}
+
+.bg-success {
+    background-color: green;
+}

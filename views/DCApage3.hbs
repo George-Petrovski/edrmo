@@ -1,0 +1,32 @@
+<h1>Data Custody Agreement Form for CASE ID: {{caseID}}, DCA ID: {{uniquedcaID}}</h1>
+<a href="/artifacts/dcainfo/{{caseID}}" class="btn btn-primary pull-left">Back to DCA Info Page</a>
+<br/>
+<form method="post" action="/artifacts/dcapg3">
+    <div class="row">
+        <div class="col-md-12">
+            <br/>
+            <h4>Data Usage and Intent</h4><br/>
+            <br/>
+            <input type="hidden" id="caseID" name="caseID" value="{{caseID}}" readonly>
+            <input type="hidden" id="dcaID" name="dcaID" value="{{uniquedcaID}}" readonly>
+            <label for="">Data Requested</label><br/>
+            <input class="form-control" id="dcadatausage1" name="dcadatausage1" type="file"><br/>
+            <input class="form-control" id="dcadatausage2" name="dcadatausage2" type="text" value="{{data.dcadatausage2}}"><br/>
+            <label for="">Data Access Method</label><br/>
+            <input class="form-control" id="dcadatausage3" name="dcadatausage3" type="text" value="{{data.dcadatausage3}}"><br/>
+            <label for="">Access Control description</label><br/>
+            <input class="form-control" id="dcadatausage4" name="dcadatausage4" type="text" value="{{data.dcadatausage4}}"><br/>
+            <label for="attestation">Access Control attestation process</label><br/>
+            <select class="form-control" name="attestation" id="attestation" value="{{data.attestation}}">
+                <option value="1">Annually</option>
+            </select>
+            <br/><br/>
+        </div>
+    </div>
+    <div class="row">
+        <button type="submit" class="btn btn-success pull-left">Save</button>
+    </div>
+</form>   
+<br/><br/>  
+<a href="/artifacts/dcapg2/{{caseID}}/{{uniquedcaID}}" class="btn btn-primary pull-left">Previous Page</a>
+<a href="/artifacts/dcapg4/{{caseID}}/{{uniquedcaID}}" class="btn btn-primary pull-right">Next Page</a>

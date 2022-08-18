@@ -1,0 +1,66 @@
+<h1>Data Custody Agreement Form for CASE ID: {{caseID}}, DCA ID: {{uniquedcaID}}</h1>
+<a href="/artifacts/dcainfo/{{caseID}}" class="btn btn-primary pull-left">Back to DCA Info Page</a>
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>example1@cibc.com</td>
+        </tr>
+        <tr>
+            <td>example2@cibc.com</td>
+        </tr>
+        <tr>
+            <td>example3@cibc.com</td>
+        </tr>
+        <tr>
+            <td>example4@cibc.com</td>
+        </tr>
+        <tr>
+            <td>example5@cibc.com</td>
+            <td><button type="delete" class="btn btn-danger pull-right">Delete</button></td>
+        </tr>
+        {{#each data}}
+			<tr>
+				<td>{{dca_extra_email}}</td>
+				<td><a
+						href='/artifacts/dcapg6/delete/{{caseID}}/{{dcaextraemailId}}'
+						class='btn btn-danger pull-right'
+					>Delete</a></td>
+			</tr>
+		{{/each}}
+    </tbody>
+</table>
+
+<form method="post" action="/artifacts/dcapg6">
+    <div class="row">
+        <div class="col-md-12">
+            <br/><br/>
+            <input type="hidden" id="caseID" name="caseID" value="{{caseID}}" readonly>
+            <input type="hidden" id="dcaID" name="dcaID" value="{{uniquedcaID}}" readonly>
+            <h4>Distribution List</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input class="form-control" id="dca_extra_email" name="dca_extra_email" type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <button type="submit" class="btn btn-success pull-right">Add to list</button>
+    </div>
+</form>   
+<br/><br/>  
+<a href="/artifacts/dcapg5/{{caseID}}/{{uniquedcaID}}" class="btn btn-primary pull-left">Previous Page</a>
+<a href="/artifacts/dcapg6/{{caseID}}/{{uniquedcaID}}" class="btn btn-primary pull-right">Submit DCA</a>

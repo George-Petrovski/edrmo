@@ -1,0 +1,45 @@
+
+<h1>Digital Records Approval Form for CASE ID: {{data}}</h1>
+<form>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="recordsname">Name of Records</label><br/>
+            <input class="form-control" id="recordsname" name="recordsname" type="text"><br/>
+            <label for="recordclass">Record Class(es)/retention period(s)</label><br/>
+            <input class="form-control" id="recordclass" name="recordclass" type="text"><br/>
+            <label for="recordmedium">Current Record medium (Physical or Electronic)</label><br/>
+            <div class="form-group">
+                <label class="checkbox-inline">
+                    <input type="radio" id="recordmedium" name="recordmedium" value="Physical">
+                    Physical
+                </label>
+                <label class="checkbox-inline">
+                    <input type="radio" id="recordmedium" name="recordmedium" value="Electronic">
+                    Electronic
+                </label>
+            </div><br/>
+            <label for="repositoryname">Name of Records Repository</label><br/>
+            <input class="form-control" id="repositoryname" name="repositoryname" type="text"><br/>
+            <label for="sbulobname">SBU/LOB Name</label> <br/>
+            <h2>Requirements for Document Imaging</h2>
+            <input class="form-control" id="sbulobname" name="sbulobname" type="text"><br/>
+            <label for="">Provide a snapshot of the process on how the Record is created, handled, imaged and stored in a way that 
+                ensures chain of custody and that the Record content is not altered in any way</label><br/>
+            <input class="form-control" id="" name="" type="file"><br/>
+            <label for="">Provide details of the imaging device and the specifications of the quality of the image</label><br/>
+            <input class="form-control" id="" name="" type="text"><br/>
+            <label for="">Provide a sample of an image to prove that it will be readable</label><br/>
+            <input class="form-control" id="" name="" type="file"><br/>
+            <label for="">Provide evidence that the images are not compressed or use a compression format that makes the image readable</label><br/>
+            <input class="form-control" id="" name="" type="text"><br/>
+            <label for="">How long will the physical copies be retained after imaging?</label><br/>
+            <input class="form-control" id="" name="" type="text"><br/>
+            <label for="">Confirm that the digitization process has a mechanism for the Senior Records Officer to apply a Preservation Notice to the physical Records</label><br/>
+            <input class="form-control" id="" name="" type="text"><br/>
+        </div>
+    </div>
+    <div class="row">
+        <button type="button" onclick="window.location.href='http://localhost:8080/artifacts/drafpg2';" class="btn btn-primary">Next</button>
+        <button type="submit" class="btn btn-success pull-right">Submit</button>
+    </div>
+</form>
